@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="es" data-theme="light">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>Pablo Segarra — Front-End Engineer &amp; UI/UX Designer</title>
+  <meta name="description" content="Portfolio de Pablo Segarra Husé, desarrollador front-end especializado en Vue 3, Vuetify y diseño UX/UI. Interfaces limpias, accesibles y cuidadas." />
+  <meta name="author" content="Pablo Segarra Husé" />
+  <meta name="theme-color" content="#42b883" />
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Pablo Segarra — Front-End Engineer &amp; UI/UX Designer" />
+  <meta property="og:description" content="Desarrollador front-end especializado en Vue 3, Vuetify y diseño UX/UI." />
+  <meta property="og:image" content="/assets/pablo.jpg" />
+
+  <link rel="icon" href="/favicon.svg" />
+  <link rel="preconnect" href="https://api.fontshare.com" crossorigin />
+  <link rel="preconnect" href="https://cdn.simpleicons.org" crossorigin />
+
+  <!-- Prevent theme flash: apply saved theme/lang before JS loads -->
+  <script>
+    (function () {
+      var t = localStorage.getItem('ps-theme') || 'light';
+      var l = localStorage.getItem('ps-lang') || 'es';
+      document.documentElement.setAttribute('data-theme', t);
+      document.documentElement.lang = l;
+    })();
+  </script>
+</head>
+<body>
+  <div id="app"></div>
+  <script type="module" src="/src/main.js"></script>
+</body>
+</html>

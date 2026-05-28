@@ -1,0 +1,32 @@
+# Dependencies
+node_modules
+
+# Build output
+dist
+
+# Environment & secrets
+.env
+.env.*
+.env.local
+
+# Vercel
+.vercel
+
+# macOS
+.DS_Store
+**/.DS_Store
+
+# Logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# Large video — compress or host externally before committing
+public/assets/projects/kbe.mp4
+
+# Original source folder (not needed in the deployed repo)
+Portfolio psegarra/
+
+# Claude Code session data
+.claude/
