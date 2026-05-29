@@ -22,8 +22,8 @@ yarn-debug.log*
 yarn-error.log*
 pnpm-debug.log*
 
-# Large video — compress or host externally before committing
-public/assets/projects/kbe.mp4
+# Video comprimido incluido en el repo (4 MB — OK para GitHub/Vercel)
+# Si quieres reemplazarlo, comprime con: ffmpeg -i original.mp4 -vf scale=1280:-2 -crf 28 -preset slow -movflags +faststart kbe.mp4
 
 # Original source folder (not needed in the deployed repo)
 Portfolio psegarra/
