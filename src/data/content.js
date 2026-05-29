@@ -12,7 +12,7 @@ export const I18N = {
     'hero.status': 'Disponible para nuevos proyectos',
     'hero.role1': 'Front-End Engineer',
     'hero.role2': 'UI / UX Designer',
-    'hero.lead': 'Diseño y construyo interfaces con Vue 3. Me obsesiona que las cosas se vean bien, funcionen bien y sean accesibles para todo el mundo.',
+    'hero.lead': 'Diseño y construyo interfaces con Vue 3. Me apasiona que las cosas se vean bien, funcionen bien y sean accesibles para todo el mundo.',
     'hero.cta.work': 'Ver experiencia',
     'hero.cta.contact': 'Hablemos',
     'hero.m1.lbl': 'Años en frontend',
