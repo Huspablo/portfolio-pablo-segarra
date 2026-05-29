@@ -12,12 +12,23 @@
           <!-- Video mode -->
           <template v-if="video">
             <video
+              v-if="!videoFailed"
               class="pmodal-video"
               :src="video"
               controls
               preload="metadata"
               playsinline
+              @error="videoFailed = true"
             ></video>
+
+            <!-- Fallback cuando el vídeo no está disponible en producción -->
+            <div v-else class="pmodal-video-fallback">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                <polygon points="5 3 19 12 5 21 5 3"/>
+              </svg>
+              <p>El vídeo no está disponible en esta versión.</p>
+              <span>El archivo es demasiado grande para el despliegue actual.<br/>Comprímelo o súbelo a YouTube/Vimeo y actualiza la ruta en <code>src/data/projects.js</code>.</span>
+            </div>
           </template>
 
           <!-- Gallery mode -->
@@ -37,7 +48,6 @@
                   <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M9 18l6-6-6-6"/></svg>
                 </button>
               </div>
-              <!-- Dot indicators -->
               <div class="pmodal-dots" v-if="gallery.length > 1">
                 <button
                   v-for="(_, i) in gallery"
@@ -56,7 +66,7 @@
 </template>
 
 <script setup>
-import { ref, watch } from 'vue'
+import { ref, watch, onMounted, onUnmounted } from 'vue'
 
 const props = defineProps({
   modelValue: Boolean,
@@ -67,6 +77,7 @@ const props = defineProps({
 const emit = defineEmits(['update:modelValue'])
 
 const current = ref(0)
+const videoFailed = ref(false)
 
 function close() {
   emit('update:modelValue', false)
@@ -80,12 +91,13 @@ function next() {
   current.value = (current.value + 1) % props.gallery.length
 }
 
-// Reset on open
 watch(() => props.modelValue, (val) => {
-  if (val) current.value = 0
+  if (val) {
+    current.value = 0
+    videoFailed.value = false
+  }
 })
 
-// Keyboard navigation
 function onKey(e) {
   if (!props.modelValue) return
   if (e.key === 'Escape') close()
@@ -93,7 +105,6 @@ function onKey(e) {
   if (e.key === 'ArrowRight' && props.gallery?.length) next()
 }
 
-import { onMounted, onUnmounted } from 'vue'
 onMounted(() => window.addEventListener('keydown', onKey))
 onUnmounted(() => window.removeEventListener('keydown', onKey))
 </script>

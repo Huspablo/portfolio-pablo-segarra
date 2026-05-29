@@ -702,6 +702,15 @@ html[data-theme='dark'] { --logo-filter: brightness(1.15) contrast(0.85); }
   max-height: 85vh;
   background: #000;
 }
+.pmodal-video-fallback {
+  display: flex; flex-direction: column; align-items: center; justify-content: center;
+  gap: 16px; padding: 60px 40px; text-align: center;
+  background: var(--surface-2); min-height: 260px;
+}
+.pmodal-video-fallback svg { width: 48px; height: 48px; color: var(--text-faint); opacity: 0.4; }
+.pmodal-video-fallback p { font-family: var(--font-display); font-weight: 600; font-size: 1.1rem; color: var(--text-soft); }
+.pmodal-video-fallback span { font-size: 0.85rem; color: var(--text-faint); line-height: 1.6; }
+.pmodal-video-fallback code { font-size: 0.8rem; background: var(--surface); border: 1px solid var(--border); padding: 2px 7px; border-radius: 5px; color: var(--accent-deep); }
 .pmodal-gallery { display: flex; flex-direction: column; }
 .pmodal-img {
   display: block; width: 100%;
