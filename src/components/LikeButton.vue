@@ -88,22 +88,24 @@ onMounted(() => {
 .like-btn {
   display: inline-flex;
   align-items: center;
-  gap: 8px;
-  padding: 8px 18px 8px 14px;
+  gap: 10px;
+  padding: 14px 28px 14px 22px;
   border-radius: 100px;
-  background: var(--surface-2);
-  border: 1px solid var(--border);
-  color: var(--text-faint);
-  font-size: 0.88rem;
+  background: var(--surface);
+  border: 1px solid var(--border-strong);
+  box-shadow: var(--shadow-md);
+  color: var(--text-soft);
+  font-size: 1.05rem;
   font-weight: 600;
   cursor: pointer;
-  transition: background 0.25s, border-color 0.25s, color 0.25s, transform 0.2s;
+  transition: background 0.25s, border-color 0.25s, color 0.25s, transform 0.2s, box-shadow 0.25s;
 }
 .like-btn:not(:disabled):hover {
   background: var(--surface);
-  border-color: var(--accent);
-  color: var(--accent-deep);
-  transform: translateY(-2px);
+  border-color: #e05c7a;
+  color: #e05c7a;
+  transform: translateY(-3px);
+  box-shadow: var(--shadow-lg), 0 0 0 4px rgba(224,92,122,0.08);
 }
 .like-btn:disabled { cursor: default; }
 .like-btn.liked {
@@ -123,8 +125,8 @@ onMounted(() => {
 }
 
 .like-heart {
-  width: 18px;
-  height: 18px;
+  width: 22px;
+  height: 22px;
   flex-shrink: 0;
   transition: fill 0.2s, color 0.2s;
 }
@@ -140,9 +142,9 @@ onMounted(() => {
 
 /* Thanks message */
 .like-thanks {
-  font-size: 0.84rem;
+  font-size: 1rem;
   font-weight: 600;
-  color: var(--accent-deep);
+  color: #e05c7a;
 }
 .fade-up-enter-active,
 .fade-up-leave-active { transition: all 0.3s ease; }

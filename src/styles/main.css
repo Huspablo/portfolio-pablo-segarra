@@ -522,10 +522,29 @@ html[data-theme='dark'] { --logo-filter: brightness(1.15) contrast(0.85); }
 .contact-row:hover .arrow { transform: translateX(4px); color: var(--accent-deep); }
 
 /* ---------- Footer ---------- */
-.footer { border-top: 1px solid var(--border); padding-block: 40px; margin-top: 40px; }
+/* ---------- Like section ---------- */
+.like-section {
+  padding-block: clamp(56px, 9vh, 100px);
+  text-align: center;
+}
+.like-section-inner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 24px;
+}
+.like-question {
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: clamp(1.5rem, 3vw, 2.2rem);
+  letter-spacing: -0.02em;
+  color: var(--text);
+}
+
+/* ---------- Footer ---------- */
+.footer { border-top: 1px solid var(--border); padding-block: 40px; }
 .footer-grid { display: flex; justify-content: space-between; align-items: center; gap: 20px; flex-wrap: wrap; }
 .footer-grid p { color: var(--text-faint); font-size: 0.9rem; }
-.footer-right { display: flex; align-items: center; gap: 16px; flex-wrap: wrap; }
 .footer-socials { display: flex; gap: 10px; }
 
 /* ---------- Work / Projects (new data-driven section) ---------- */
