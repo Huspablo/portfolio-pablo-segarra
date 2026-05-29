@@ -23,10 +23,10 @@ export const projects = [
     company: 'Preference S.L.',
     year: '2023–2024',
     description: {
-      es: 'Plataforma interna para gestionar terminales portuarios, construida desde cero. Me encargué del front con Vue 3 y Vuetify, pensando mucho en cómo organizar los componentes para que el proyecto no se comiera a sí mismo a medida que crecía.',
-      en: 'Internal platform for port terminal management, built from scratch. I handled the front-end with Vue 3 and Vuetify, spending a lot of time thinking about how to structure components so the project could scale without becoming a mess.',
+      es: 'Herramienta interna desarrollada en Preference para visualizar el estado y los logs de pipelines de despliegue ejecutadas en Kubernetes. Permitía hacer seguimiento en tiempo real de los despliegues de proyectos web grandes, con una interfaz construida con Vue 3 y Vuetify.',
+      en: 'Internal tool developed at Preference to visualise the state and logs of deployment pipelines running on Kubernetes. It allowed real-time tracking of deployments for large web projects, with an interface built in Vue 3 and Vuetify.',
     },
-    technologies: ['Vue 3', 'Vuetify', 'Figma', 'JavaScript'],
+    technologies: ['Vue 3', 'Vuetify', 'Kubernetes', 'Figma'],
     thumbnail: '/assets/projects/kbe-thumb.png',
     // Vídeo de 71 MB — para producción comprímelo o súbelo a YouTube/Vimeo
     // y cambia esta ruta por el embed correspondiente
