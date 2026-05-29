@@ -1,5 +1,27 @@
 <template>
-  <section class="section-pad wrap" id="skills" data-screen-label="Skills">
+  <!-- Marquee band — full width, outside .wrap -->
+  <div class="marquee-band" aria-hidden="true">
+    <div class="marquee-inner">
+      <!-- Two identical tracks for seamless loop -->
+      <div class="marquee-track" v-for="n in 2" :key="n">
+        <template v-for="item in allItems" :key="`${n}-${item.slug}`">
+          <div class="marquee-item">
+            <img
+              v-if="!item.icon"
+              :src="`https://cdn.simpleicons.org/${item.slug}`"
+              :alt="item.name"
+              loading="lazy"
+              @error="(e) => e.target.style.display = 'none'"
+            />
+            <img v-else :src="item.icon" :alt="item.name" loading="lazy" />
+            {{ item.name }}
+          </div>
+        </template>
+      </div>
+    </div>
+  </div>
+
+  <section class="section-pad section-alt wrap" id="skills" data-screen-label="Skills">
     <div class="skills-head">
       <div>
         <span class="eyebrow reveal">{{ t('skills.eyebrow') }}</span>
@@ -36,10 +58,13 @@
 </template>
 
 <script setup>
+import { computed } from 'vue'
 import { useI18n } from '../composables/useI18n.js'
 import { TECH_GROUPS } from '../data/content.js'
 
 const { t } = useI18n()
+
+const allItems = computed(() => TECH_GROUPS.flatMap(g => g.items))
 
 function onIconError(event, name) {
   const img = event.target
