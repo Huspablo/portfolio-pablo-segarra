@@ -23,8 +23,8 @@ export const projects = [
     company: 'Preference S.L.',
     year: '2023–2024',
     description: {
-      es: 'Plataforma de gestión para ecosistemas de terminales portuarios. Diseño e implementación de interfaces complejas con Vue 3 y Vuetify, centradas en usabilidad, rendimiento y arquitectura de componentes reutilizables.',
-      en: 'Management platform for port terminal ecosystems. Design and implementation of complex interfaces with Vue 3 and Vuetify, focused on usability, performance and reusable component architecture.',
+      es: 'Plataforma interna para gestionar terminales portuarios, construida desde cero. Me encargué del front con Vue 3 y Vuetify, pensando mucho en cómo organizar los componentes para que el proyecto no se comiera a sí mismo a medida que crecía.',
+      en: 'Internal platform for port terminal management, built from scratch. I handled the front-end with Vue 3 and Vuetify, spending a lot of time thinking about how to structure components so the project could scale without becoming a mess.',
     },
     technologies: ['Vue 3', 'Vuetify', 'Figma', 'JavaScript'],
     thumbnail: '/assets/projects/kbe-thumb.png',
@@ -45,8 +45,8 @@ export const projects = [
     company: 'Prodevelop',
     year: '2023–2024',
     description: {
-      es: 'Sistema de diseño de interfaces para aplicaciones de gestión empresarial. Incluye componentes de tablas de datos, formularios, diálogos y vistas de autenticación con soporte completo para modo claro y oscuro.',
-      en: 'Interface design system for enterprise management applications. Includes data table components, forms, dialogs and authentication views with full light and dark mode support.',
+      es: 'Diseñé el sistema de interfaces en Figma para aplicaciones de gestión interna: tablas, formularios, diálogos, login, modo claro y oscuro desde el principio. El reto era que todo tuviera coherencia visual y que los developers pudieran implementarlo sin ambigüedad.',
+      en: 'Designed the interface system in Figma for internal management apps: tables, forms, dialogs, login, light and dark mode from day one. The challenge was making everything visually coherent and easy enough for developers to implement without second-guessing anything.',
     },
     technologies: ['Figma', 'UX/UI', 'Design Systems', 'Prototyping'],
     // Para cambiar la imagen de portada: thumbnail: '/assets/projects/nueva.png'
@@ -72,8 +72,8 @@ export const projects = [
     company: 'Preference S.L.',
     year: '2023–2024',
     description: {
-      es: 'Dashboard de gestión interna con visualización de datos en tiempo real, gráficas con Chart.js, gestión de tareas y tabla de usuarios. Conectado a SQL Server y desarrollado con Vue 2.',
-      en: 'Internal management dashboard with real-time data visualization, Chart.js charts, task management and user table. Connected to SQL Server and built with Vue 2.',
+      es: 'Un dashboard interno para el equipo de Preference: gráficas en tiempo real con Chart.js, gestión de tareas y una tabla de usuarios. Conectado a SQL Server y montado con Vue 2.',
+      en: 'An internal dashboard for the Preference team: real-time charts with Chart.js, task management and a user table. Connected to SQL Server and built with Vue 2.',
     },
     technologies: ['Vue 2', 'Chart.js', 'SQL Server', 'JavaScript'],
     thumbnail: '/assets/projects/dashboard-bg.jpg',
@@ -89,8 +89,8 @@ export const projects = [
     company: null,
     year: '2021',
     description: {
-      es: 'Web de pedidos de ensaladas online. Arquitectura MVC con Java y Tomcat, base de datos MySQL y frontend con HTML, CSS y JavaScript.',
-      en: 'Online salad ordering web application. MVC architecture with Java and Tomcat, MySQL database and frontend with HTML, CSS and JavaScript.',
+      es: 'Proyecto universitario de una tienda de ensaladas online. Hice todo el stack: backend con Java y Tomcat siguiendo MVC, base de datos MySQL y el frontend a mano con HTML, CSS y JavaScript.',
+      en: 'University project — an online salad shop. I built the full stack: backend with Java and Tomcat following MVC, MySQL database and the frontend by hand with HTML, CSS and JavaScript.',
     },
     technologies: ['Java', 'Tomcat', 'MySQL', 'PHP', 'HTML', 'CSS'],
     thumbnail: '/assets/projects/saladelia-home.jpg',
@@ -106,8 +106,8 @@ export const projects = [
     company: null,
     year: '2020–2021',
     description: {
-      es: 'Simulación física de sistemas de partículas con detección de colisiones entre partículas y planos. Optimización mediante HashTable espacial para búsqueda eficiente de vecinos.',
-      en: 'Physical simulation of particle systems with collision detection between particles and planes. Optimised with spatial HashTable for efficient neighbour search.',
+      es: 'Simulación de partículas con física real: colisiones entre partículas y contra planos. Para que fuera rápido con muchas partículas usé una HashTable espacial que evita comprobar colisiones innecesarias.',
+      en: 'Particle simulation with real physics: collisions between particles and against planes. To keep it fast with many particles I used a spatial HashTable to avoid checking unnecessary collisions.',
     },
     technologies: ['Processing', 'Java', 'Physics', 'Algorithms'],
     thumbnail: '/assets/projects/particles.png',
@@ -127,8 +127,8 @@ export const publications = [
     publisher: 'NTT DATA — If Geek Then',
     year: '2022',
     description: {
-      es: 'Artículo técnico con las 10 mejores prácticas CSS para proyectos OutSystems, publicado en la plataforma tecnológica de NTT DATA.',
-      en: 'Technical article with the 10 CSS best practices for OutSystems projects, published on NTT DATA\'s technology platform.',
+      es: 'Lo escribí mientras estaba en NTT DATA, con las 10 cosas que aprendí sobre CSS en OutSystems. Lo publicaron en su plataforma técnica If Geek Then.',
+      en: 'Wrote this while at NTT DATA — the 10 things I learned about CSS in OutSystems. Published on their tech platform If Geek Then.',
     },
     link: 'https://ifgeekthen.nttdata.com/s/post/decalogo-css-de-buenas-practicas-en-outsystems-MC2WVFZLRR2NDRDODGNCE433XPHI?language=es',
     visible: true,
