@@ -525,6 +525,7 @@ html[data-theme='dark'] { --logo-filter: brightness(1.15) contrast(0.85); }
 .footer { border-top: 1px solid var(--border); padding-block: 40px; margin-top: 40px; }
 .footer-grid { display: flex; justify-content: space-between; align-items: center; gap: 20px; flex-wrap: wrap; }
 .footer-grid p { color: var(--text-faint); font-size: 0.9rem; }
+.footer-right { display: flex; align-items: center; gap: 16px; flex-wrap: wrap; }
 .footer-socials { display: flex; gap: 10px; }
 
 /* ---------- Work / Projects (new data-driven section) ---------- */
