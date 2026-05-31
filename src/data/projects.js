@@ -74,7 +74,9 @@ export const projects = [
     },
     technologies: ['Vue 3', 'Vite', 'Chart.js', 'Vue Router', 'Sass'],
     thumbnail: '/assets/projects/dashboard-bg.jpg',
-    links: {},
+    links: {
+      live: 'https://prefweb-dashboard.vercel.app/#/dashboard',
+    },
     featured: false,
     visible: true,
   },
