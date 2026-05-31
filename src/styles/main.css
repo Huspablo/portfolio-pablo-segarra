@@ -442,8 +442,7 @@ html[data-theme='dark'] .icon-btn .moon { display: none; }
 .soft-card .ic svg { width: 22px; height: 22px; }
 
 /* ---------- Section alt background ---------- */
-.section-alt {
-  background: linear-gradient(180deg, color-mix(in oklab, var(--bg-tint) 50%, var(--surface) 50%) 0%, var(--bg-tint) 20%);
+.section-alt {background: linear-gradient(180deg, color-mix(in oklab, var(--bg-tint) 50%, var(--surface) 0%) 0%, var(--bg-tint) 20%);
   border-top: 1px solid var(--border);
 }
 
