@@ -442,15 +442,18 @@ html[data-theme='dark'] .icon-btn .moon { display: none; }
 .soft-card .ic svg { width: 22px; height: 22px; }
 
 /* ---------- Section alt background ---------- */
-.section-alt { background: var(--bg-tint); }
+.section-alt {
+  background: linear-gradient(180deg, color-mix(in oklab, var(--bg-tint) 50%, var(--surface) 50%) 0%, var(--bg-tint) 20%);
+  border-top: 1px solid var(--border);
+}
 
 /* ---------- Tech Marquee ---------- */
 .marquee-band {
   overflow: hidden;
-  padding-block: 28px;
+  padding-block: 32px 24px;
   border-top: 1px solid var(--border);
-  border-bottom: 1px solid var(--border);
-  background: linear-gradient(90deg, var(--surface) 0%, color-mix(in oklab, var(--surface) 95%, var(--accent-soft)) 50%, var(--surface) 100%);
+  border-bottom: none;
+  background: linear-gradient(180deg, var(--surface) 0%, color-mix(in oklab, var(--bg-tint) 50%, var(--surface) 50%) 100%);
   margin-bottom: 0;
   position: relative;
 }
@@ -461,8 +464,8 @@ html[data-theme='dark'] .icon-btn .moon { display: none; }
   left: 0;
   top: 0;
   bottom: 0;
-  width: 40px;
-  background: linear-gradient(90deg, var(--surface), transparent);
+  width: 50px;
+  background: linear-gradient(90deg, var(--surface) 0%, transparent 70%);
   z-index: 10;
   pointer-events: none;
 }
@@ -473,8 +476,8 @@ html[data-theme='dark'] .icon-btn .moon { display: none; }
   right: 0;
   top: 0;
   bottom: 0;
-  width: 40px;
-  background: linear-gradient(270deg, var(--surface), transparent);
+  width: 50px;
+  background: linear-gradient(270deg, var(--surface) 0%, transparent 70%);
   z-index: 10;
   pointer-events: none;
 }
