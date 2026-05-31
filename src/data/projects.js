@@ -16,6 +16,30 @@
 
 export const projects = [
   {
+    id: 'prodevelop',
+    title: 'Prodevelop — Design System',
+    type: { es: 'Diseño UX/UI', en: 'UX/UI Design' },
+    role: { es: 'UI/UX Designer', en: 'UI/UX Designer' },
+    company: 'Prodevelop',
+    year: '2024–current',
+    description: {
+      es: 'Junto a una compañera de diseño, construimos el sistema de interfaces para las aplicaciones de Prodevelop. Fui el puente entre el equipo de diseño y los programadores: cogía los diseños de Figma y los trasladaba a componentes Vue, asegurando que lo que se implementaba respetaba lo que se había diseñado.',
+      en: 'Together with a designer colleague, we built the interface system for Prodevelop\'s apps. I bridged the gap between the design team and the developers: taking the Figma designs and translating them into Vue components, making sure what got implemented matched what had been designed.',
+    },
+    technologies: ['Figma', 'UX/UI', 'Design Systems', 'Prototyping'],
+    thumbnail: '/assets/projects/prodevelop-login.png',
+    // Dos vídeos — para cambiar: edita src o title
+    videos: [
+      { src: '/assets/projects/prodevelop-overview.mp4',   title: 'Overview' },
+      { src: '/assets/projects/prodevelop-reefer.mp4',     title: 'Reefer + Yard Inventory' },
+    ],
+    links: {
+      figma: 'https://www.figma.com/design/k4syBB9QmwPMwDybPPj9bS/T.-Terminal-4.0?node-id=70-2089&p=f&t=gik2nKglCPHy3nHY-0',
+    },
+    featured: false,
+    visible: true,
+  },
+  {
     id: 'kbe',
     title: 'KB Ecosystem',
     type: { es: 'Proyecto profesional', en: 'Professional project' },
@@ -33,30 +57,6 @@ export const projects = [
     video: '/assets/projects/kbe.mp4',
     links: {
       figma: 'https://www.figma.com/design/6mLPJf4R8LIjmBa67Ejq4x/KB-Ecosystem?node-id=0-1&t=gMXpOOqcDz12xAmX-1',
-    },
-    featured: false,
-    visible: true,
-  },
-  {
-    id: 'prodevelop',
-    title: 'Prodevelop — Design System',
-    type: { es: 'Diseño UX/UI', en: 'UX/UI Design' },
-    role: { es: 'UI/UX Designer', en: 'UI/UX Designer' },
-    company: 'Prodevelop',
-    year: '2023–2024',
-    description: {
-      es: 'Junto a una compañera de diseño, construimos el sistema de interfaces para las aplicaciones de Prodevelop. Fui el puente entre el equipo de diseño y los programadores: cogía los diseños de Figma y los trasladaba a componentes Vue, asegurando que lo que se implementaba respetaba lo que se había diseñado.',
-      en: 'Together with a designer colleague, we built the interface system for Prodevelop\'s apps. I bridged the gap between the design team and the developers: taking the Figma designs and translating them into Vue components, making sure what got implemented matched what had been designed.',
-    },
-    technologies: ['Figma', 'UX/UI', 'Design Systems', 'Prototyping'],
-    thumbnail: '/assets/projects/prodevelop-login.png',
-    // Dos vídeos — para cambiar: edita src o title
-    videos: [
-      { src: '/assets/projects/prodevelop-overview.mp4',   title: 'Overview' },
-      { src: '/assets/projects/prodevelop-reefer.mp4',     title: 'Reefer + Yard Inventory' },
-    ],
-    links: {
-      figma: 'https://www.figma.com/design/k4syBB9QmwPMwDybPPj9bS/T.-Terminal-4.0?node-id=70-2089&p=f&t=gik2nKglCPHy3nHY-0',
     },
     featured: false,
     visible: true,
