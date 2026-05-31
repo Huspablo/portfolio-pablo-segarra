@@ -479,25 +479,6 @@ html[data-theme='dark'] .icon-btn .moon { display: none; }
   pointer-events: none;
 }
 
-.marquee-content {
-  display: flex;
-  align-items: center;
-  gap: 24px;
-}
-
-.marquee-label {
-  font-size: 0.75rem;
-  font-weight: 700;
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
-  color: var(--accent-deep);
-  background: var(--accent-soft);
-  padding: 6px 14px;
-  border-radius: 100px;
-  white-space: nowrap;
-  flex-shrink: 0;
-}
-
 .marquee-inner {
   display: flex;
   width: max-content;

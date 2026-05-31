@@ -1,26 +1,23 @@
 <template>
   <!-- Marquee band — full width, outside .wrap -->
   <div class="marquee-band" aria-hidden="true">
-    <div class="marquee-content">
-      <div class="marquee-label">{{ t('skills.eyebrow') }}</div>
-      <div class="marquee-inner">
-        <div class="marquee-track" v-for="n in 3" :key="n">
-          <template v-for="item in allItems" :key="`${n}-${item.slug}`">
-            <div class="marquee-item">
-              <div class="marquee-item-icon">
-                <img
-                  v-if="!item.icon"
-                  :src="`https://cdn.simpleicons.org/${item.slug}`"
-                  :alt="item.name"
-                  loading="lazy"
-                  @error="(e) => e.target.style.display = 'none'"
-                />
-                <img v-else :src="item.icon" :alt="item.name" loading="lazy" />
-              </div>
-              <span>{{ item.name }}</span>
+    <div class="marquee-inner">
+      <div class="marquee-track" v-for="n in 3" :key="n">
+        <template v-for="item in allItems" :key="`${n}-${item.slug}`">
+          <div class="marquee-item">
+            <div class="marquee-item-icon">
+              <img
+                v-if="!item.icon"
+                :src="`https://cdn.simpleicons.org/${item.slug}`"
+                :alt="item.name"
+                loading="lazy"
+                @error="(e) => e.target.style.display = 'none'"
+              />
+              <img v-else :src="item.icon" :alt="item.name" loading="lazy" />
             </div>
-          </template>
-        </div>
+            <span>{{ item.name }}</span>
+          </div>
+        </template>
       </div>
     </div>
   </div>
