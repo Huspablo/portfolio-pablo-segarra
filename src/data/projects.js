@@ -49,17 +49,14 @@ export const projects = [
       en: 'Designed the interface system in Figma for internal management apps: tables, forms, dialogs, login, light and dark mode from day one. The challenge was making everything visually coherent and easy enough for developers to implement without second-guessing anything.',
     },
     technologies: ['Figma', 'UX/UI', 'Design Systems', 'Prototyping'],
-    // Para cambiar la imagen de portada: thumbnail: '/assets/projects/nueva.png'
     thumbnail: '/assets/projects/prodevelop-login.png',
-    // Para cambiar imágenes del modal: edita este array
-    gallery: [
-      '/assets/projects/prodevelop-login.png',
-      '/assets/projects/prodevelop-table-light.png',
-      '/assets/projects/prodevelop-table-dark.png',
-      '/assets/projects/prodevelop-dialog.png',
+    // Dos vídeos — para cambiar: edita src o title
+    videos: [
+      { src: '/assets/projects/prodevelop-overview.mp4',   title: 'Overview' },
+      { src: '/assets/projects/prodevelop-reefer.mp4',     title: 'Reefer + Yard Inventory' },
     ],
     links: {
-      figma: 'https://www.figma.com/design/xk4tlhCbqWXUKgCCa6a3J7/Prodevelop?node-id=0-1&t=kVzBzozE6G8nIJN3-1',
+      figma: 'https://www.figma.com/design/k4syBB9QmwPMwDybPPj9bS/T.-Terminal-4.0?node-id=70-2089&p=f&t=gik2nKglCPHy3nHY-0',
     },
     featured: false,
     visible: true,

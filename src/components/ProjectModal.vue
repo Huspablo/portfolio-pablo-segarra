@@ -9,8 +9,40 @@
             </svg>
           </button>
 
-          <!-- Video mode -->
-          <template v-if="video">
+          <!-- Multiple videos mode -->
+          <template v-if="videos && videos.length">
+            <video
+              v-if="!videoFailed"
+              class="pmodal-video"
+              :src="videos[currentVideo].src"
+              :key="videos[currentVideo].src"
+              controls
+              preload="metadata"
+              playsinline
+              @error="videoFailed = true"
+            ></video>
+            <div v-else class="pmodal-video-fallback">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                <polygon points="5 3 19 12 5 21 5 3"/>
+              </svg>
+              <p>Vídeo no disponible</p>
+            </div>
+            <!-- Video tabs -->
+            <div class="pmodal-vtabs" v-if="videos.length > 1">
+              <button
+                v-for="(v, i) in videos"
+                :key="i"
+                :class="['pmodal-vtab', { active: i === currentVideo }]"
+                @click="selectVideo(i)"
+              >
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="13" height="13"><polygon points="5 3 19 12 5 21 5 3"/></svg>
+                {{ v.title }}
+              </button>
+            </div>
+          </template>
+
+          <!-- Single video mode -->
+          <template v-else-if="video">
             <video
               v-if="!videoFailed"
               class="pmodal-video"
@@ -20,8 +52,6 @@
               playsinline
               @error="videoFailed = true"
             ></video>
-
-            <!-- Fallback cuando el vídeo no está disponible en producción -->
             <div v-else class="pmodal-video-fallback">
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
                 <polygon points="5 3 19 12 5 21 5 3"/>
@@ -72,11 +102,13 @@ const props = defineProps({
   modelValue: Boolean,
   gallery: Array,
   video: String,
+  videos: Array,
   title: String,
 })
 const emit = defineEmits(['update:modelValue'])
 
 const current = ref(0)
+const currentVideo = ref(0)
 const videoFailed = ref(false)
 
 function close() {
@@ -91,9 +123,16 @@ function next() {
   current.value = (current.value + 1) % props.gallery.length
 }
 
+function selectVideo(i) {
+  if (i === currentVideo.value) return
+  videoFailed.value = false
+  currentVideo.value = i
+}
+
 watch(() => props.modelValue, (val) => {
   if (val) {
     current.value = 0
+    currentVideo.value = 0
     videoFailed.value = false
   }
 })

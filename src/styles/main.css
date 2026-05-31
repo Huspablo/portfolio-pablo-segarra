@@ -830,6 +830,21 @@ html[data-theme='dark'] { --logo-filter: brightness(1.15) contrast(0.85); }
   max-height: 85vh;
   background: #000;
 }
+.pmodal-vtabs {
+  display: flex; gap: 0;
+  border-top: 1px solid var(--border);
+  background: var(--surface);
+}
+.pmodal-vtab {
+  flex: 1; display: flex; align-items: center; justify-content: center; gap: 7px;
+  padding: 13px 16px; font-size: 0.85rem; font-weight: 500; color: var(--text-faint);
+  border: none; background: none; cursor: pointer;
+  border-bottom: 2px solid transparent;
+  transition: color 0.2s, border-color 0.2s, background 0.2s;
+}
+.pmodal-vtab:hover { color: var(--text-soft); background: var(--surface-2); }
+.pmodal-vtab.active { color: var(--accent-deep); border-bottom-color: var(--accent-bright); background: var(--accent-soft); }
+
 .pmodal-video-fallback {
   display: flex; flex-direction: column; align-items: center; justify-content: center;
   gap: 16px; padding: 60px 40px; text-align: center;

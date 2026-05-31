@@ -12,8 +12,8 @@
         loading="lazy"
       />
 
-      <!-- Video placeholder (featured) -->
-      <div v-else-if="project.video" class="pcard-video-ph">
+      <!-- Video placeholder -->
+      <div v-else-if="project.video || project.videos?.length" class="pcard-video-ph">
         <div class="pcard-play-ring">
           <svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
         </div>
@@ -39,7 +39,7 @@
       <div class="pcard-overlay" v-if="hasMedia">
         <span class="pcard-overlay-label">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="16" height="16">
-            <path v-if="project.video" d="M5 3l14 9-14 9V3z"/>
+            <path v-if="project.video || project.videos?.length" d="M5 3l14 9-14 9V3z"/>
             <path v-else d="M15 3h6v6M9 21H3v-6M21 3l-9 9M3 21l9-9"/>
           </svg>
           {{ mediaLabel }}
@@ -75,12 +75,12 @@
           {{ lang === 'es' ? 'Ver diseños' : 'View designs' }}
         </button>
         <button
-          v-if="project.video"
+          v-if="project.video || project.videos?.length"
           class="btn btn-ghost pcard-btn"
           @click="openMedia"
         >
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="16" height="16"><polygon points="5 3 19 12 5 21 5 3"/></svg>
-          {{ lang === 'es' ? 'Ver demo' : 'Watch demo' }}
+          {{ project.videos?.length > 1 ? (lang === 'es' ? `Ver ${project.videos.length} vídeos` : `Watch ${project.videos.length} videos`) : (lang === 'es' ? 'Ver demo' : 'Watch demo') }}
         </button>
         <a
           v-if="project.links?.figma"
@@ -107,6 +107,7 @@
       v-model="modalOpen"
       :gallery="project.gallery"
       :video="project.video"
+      :videos="project.videos"
       :title="project.title"
     />
   </article>
@@ -131,9 +132,12 @@ function t(field) {
   return field[lang.value] ?? field.es ?? ''
 }
 
-const hasMedia = computed(() => !!(props.project.gallery?.length || props.project.video))
+const hasMedia = computed(() =>
+  !!(props.project.gallery?.length || props.project.video || props.project.videos?.length)
+)
 
 const mediaLabel = computed(() => {
+  if (props.project.videos?.length) return lang.value === 'es' ? 'Ver vídeos' : 'Watch videos'
   if (props.project.video) return lang.value === 'es' ? 'Ver demo' : 'Watch demo'
   if (props.project.gallery?.length) return lang.value === 'es' ? 'Ver diseños' : 'View designs'
   return ''
