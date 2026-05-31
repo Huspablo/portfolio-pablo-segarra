@@ -45,8 +45,8 @@ export const projects = [
     company: 'Prodevelop',
     year: '2023–2024',
     description: {
-      es: 'Diseñé el sistema de interfaces en Figma para aplicaciones de gestión interna: tablas, formularios, diálogos, login, modo claro y oscuro desde el principio. El reto era que todo tuviera coherencia visual y que los developers pudieran implementarlo sin ambigüedad.',
-      en: 'Designed the interface system in Figma for internal management apps: tables, forms, dialogs, login, light and dark mode from day one. The challenge was making everything visually coherent and easy enough for developers to implement without second-guessing anything.',
+      es: 'Junto a una compañera de diseño, construimos el sistema de interfaces para las aplicaciones de Prodevelop. Fui el puente entre el equipo de diseño y los programadores: cogía los diseños de Figma y los trasladaba a componentes Vue, asegurando que lo que se implementaba respetaba lo que se había diseñado.',
+      en: 'Together with a designer colleague, we built the interface system for Prodevelop\'s apps. I bridged the gap between the design team and the developers: taking the Figma designs and translating them into Vue components, making sure what got implemented matched what had been designed.',
     },
     technologies: ['Figma', 'UX/UI', 'Design Systems', 'Prototyping'],
     thumbnail: '/assets/projects/prodevelop-login.png',

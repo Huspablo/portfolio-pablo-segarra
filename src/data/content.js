@@ -21,7 +21,7 @@ export const I18N = {
     'hero.chip.ux': 'UX / UI',
 
     'about.eyebrow': 'Sobre mí',
-    'about.title': 'Diseño, código y demasiadas horas en Figma.',
+    'about.title': 'Código que funciona y que además se ve bien.',
     'about.p1': 'Soy <strong>Pablo Segarra Husé</strong>, desarrollador front-end especializado en <strong>Vue 3, Vuetify y diseño UX/UI</strong>. Vengo de la comunicación audiovisual y la ingeniería multimedia, lo que me da una perspectiva diferente: entiendo el diseño desde dentro, no solo como un requisito que hay que implementar.',
     'about.p2': 'Me gusta cuando las dos cosas encajan: que el componente funcione bien y que además se vea bien. Las microinteracciones, los sistemas de diseño, la accesibilidad — son los detalles que marcan la diferencia entre una interfaz que funciona y una que da gusto usar.',
     'about.tagsTitle': 'Lo que me define',
@@ -78,7 +78,7 @@ export const I18N = {
     'hero.chip.ux': 'UX / UI',
 
     'about.eyebrow': 'About me',
-    'about.title': 'Design, code and way too many hours in Figma.',
+    'about.title': 'Code that works and also looks good.',
     'about.p1': "I'm <strong>Pablo Segarra Husé</strong>, a front-end developer specialised in <strong>Vue 3, Vuetify and UX/UI design</strong>. I come from audiovisual communication and multimedia engineering, which gives me a different perspective: I understand design from the inside, not just as a requirement to implement.",
     'about.p2': "I like when both things click: a component that works well and also looks good. Microinteractions, design systems, accessibility — the details that separate an interface that works from one people actually enjoy using.",
     'about.tagsTitle': 'What defines me',
