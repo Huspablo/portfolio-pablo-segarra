@@ -69,10 +69,10 @@ export const projects = [
     company: 'Preference S.L.',
     year: '2023–2024',
     description: {
-      es: 'Un dashboard interno para el equipo de Preference: gráficas en tiempo real con Chart.js, gestión de tareas y una tabla de usuarios. Conectado a SQL Server y montado con Vue 2.',
-      en: 'An internal dashboard for the Preference team: real-time charts with Chart.js, task management and a user table. Connected to SQL Server and built with Vue 2.',
+      es: 'Panel de monitorización en tiempo real para el manager de cloud de Preference. Supervisa ~100 instancias de PrefWeb desplegadas en clientes por toda Europa, con gráficas de disponibilidad y alertas de incidencias. Fue también mi primer proyecto propio con Vue para coger soltura con el stack.',
+      en: "Real-time monitoring dashboard for Preference's cloud manager. Tracks ~100 PrefWeb instances deployed across European clients, with availability charts and incident alerts. Also my first self-driven Vue project — a great way to get comfortable with the stack.",
     },
-    technologies: ['Vue 2', 'Chart.js', 'SQL Server', 'JavaScript'],
+    technologies: ['Vue 3', 'Vite', 'Chart.js', 'Vue Router', 'Sass'],
     thumbnail: '/assets/projects/dashboard-bg.jpg',
     links: {},
     featured: false,
