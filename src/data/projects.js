@@ -17,7 +17,7 @@
 export const projects = [
   {
     id: 'prodevelop',
-    title: 'Posidonia Terminal 4.0 — Design System',
+    title: 'Posidonia Terminal 4.0 — Design Implementation',
     type: { es: 'Diseño UX/UI', en: 'UX/UI Design' },
     role: { es: 'UI/UX Designer', en: 'UI/UX Designer' },
     company: 'Prodevelop',
