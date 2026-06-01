@@ -40,6 +40,25 @@ export const projects = [
     visible: true,
   },
   {
+    id: 'vue-learning-lab',
+    title: 'Vue Learning Lab',
+    type: { es: 'Proyecto profesional', en: 'Professional project' },
+    role: { es: 'Frontend Developer', en: 'Frontend Developer' },
+    company: 'Prodevelop',
+    year: '2024',
+    description: {
+      es: 'Plataforma interactiva de documentación y aprendizaje de Vue.js. Creé un espacio para que el equipo de Prodevelop pudiera aprender y mejorar sus habilidades con Vue, cubriendo desde conceptos básicos hasta patrones avanzados. Incluye ejemplos interactivos, guías de mejores prácticas y ejercicios prácticos.',
+      en: 'Interactive Vue.js documentation and learning platform. Created a space for the Prodevelop team to learn and improve their Vue skills, covering from basic concepts to advanced patterns. Includes interactive examples, best practices guides and practical exercises.',
+    },
+    technologies: ['Vue 3', 'Vite', 'Documentation', 'Interactive Learning', 'Markdown'],
+    thumbnail: '/assets/projects/vue-lab.png',
+    links: {
+      live: 'https://vue-learning-lab.vercel.app/#/',
+    },
+    featured: false,
+    visible: true,
+  },
+  {
     id: 'kbe',
     title: 'KB Ecosystem',
     type: { es: 'Proyecto profesional', en: 'Professional project' },
