@@ -17,17 +17,22 @@
 export const projects = [
   {
     id: 'prodevelop',
-    title: 'Prodevelop — Posidonia Terminal Design System',
+    title: 'Posidonia Terminal 4.0 — Design System',
     type: { es: 'Diseño UX/UI', en: 'UX/UI Design' },
     role: { es: 'UI/UX Designer', en: 'UI/UX Designer' },
     company: 'Prodevelop',
     year: '2024–current',
     description: {
-      es: 'Implementé un sistema de diseño completo para la Terminal Posidonia de Prodevelop. Junto a una compañera de diseño, construimos la arquitectura visual y los componentes base. Fui el puente entre diseño y desarrollo: trasladaba los diseños de Figma a componentes Vue, asegurando coherencia en la implementación.',
-      en: 'Implemented a complete design system for Prodevelop\'s Posidonia Terminal. Together with a designer colleague, we built the visual architecture and base components. I bridged the gap between design and development: translating Figma designs into Vue components, ensuring implementation consistency.',
+      es: 'Junto a una compañera de diseño, construimos el sistema de interfaces para las aplicaciones de Prodevelop. Fui el puente entre el equipo de diseño y los programadores: cogía los diseños de Figma y los trasladaba a componentes Vue, asegurando que lo que se implementaba respetaba lo que se había diseñado.',
+      en: 'Together with a designer colleague, we built the interface system for Prodevelop\'s apps. I bridged the gap between the design team and the developers: taking the Figma designs and translating them into Vue components, making sure what got implemented matched what had been designed.',
     },
-    technologies: ['Figma', 'UX/UI', 'Design Systems', 'Vue 3'],
-    thumbnail: '/assets/projects/prodevelop-pt4.png',
+    technologies: ['Figma', 'UX/UI', 'Design Systems', 'Prototyping'],
+    thumbnail: '/assets/projects/pt4.0.png',
+    // Dos vídeos — para cambiar: edita src o title
+    videos: [
+      { src: '/assets/projects/prodevelop-overview.mp4',   title: 'Overview' },
+      { src: '/assets/projects/prodevelop-reefer.mp4',     title: 'Reefer + Yard Inventory' },
+    ],
     links: {
       figma: 'https://www.figma.com/design/k4syBB9QmwPMwDybPPj9bS/T.-Terminal-4.0?node-id=70-2089&p=f&t=gik2nKglCPHy3nHY-0',
     },
