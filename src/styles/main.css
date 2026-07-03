@@ -357,8 +357,9 @@ html[data-theme='dark'] .icon-btn .moon { display: none; }
 /* ---------- About ---------- */
 .about-grid { display: grid; grid-template-columns: 0.9fr 1.1fr; gap: clamp(36px, 6vw, 76px); align-items: center; }
 .about-photo { position: relative; border-radius: var(--radius-lg); overflow: hidden; aspect-ratio: 4/5;
-  border: 1px solid var(--border); box-shadow: var(--shadow-md); }
-.about-photo img { width: 100%; height: 100%; object-fit: cover; object-position: 50% 16%; filter: grayscale(0.15); }
+  box-shadow: var(--shadow-lg), 0 0 0 1px var(--border), 0 0 80px -20px var(--accent-glow); }
+.about-photo img { width: 100%; height: 100%; object-fit: cover; object-position: 50% 12%; transition: transform 0.7s cubic-bezier(0.25, 0.46, 0.45, 0.94); }
+.about-photo:hover img { transform: scale(1.03); }
 .about-text p { color: var(--text-soft); font-size: 1.08rem; margin-top: 18px; text-wrap: pretty; }
 .about-text p strong {
   color: var(--text); font-weight: 600;
