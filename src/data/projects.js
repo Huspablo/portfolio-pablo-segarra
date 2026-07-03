@@ -23,8 +23,8 @@ export const projects = [
     company: null,
     year: '2025',
     description: {
-      es: 'Plataforma SaaS para galerías de arte virtuales en 3D. Los artistas suben sus obras y las exponen en espacios tridimensionales navegables en el navegador, renderizados en tiempo real con Three.js y React Three Fiber. Construida con Next.js 15 y TypeScript, integra un stack de servicios moderno: Neon (PostgreSQL) con Prisma para los datos, Inngest para procesar imágenes de forma asíncrona, Cloudflare R2 como CDN de assets, Stripe para suscripciones y billing, y Claude AI para enriquecer el flujo de contenido. Un laboratorio personal para explorar arquitectura full-stack, SaaS real y 3D en web.',
-      en: 'SaaS platform for immersive 3D art galleries. Artists upload their work and exhibit it in three-dimensional spaces that visitors navigate directly in the browser, rendered in real time with Three.js and React Three Fiber. Built with Next.js 15 and TypeScript, it integrates a modern services stack: Neon (PostgreSQL) with Prisma for data, Inngest for async image processing, Cloudflare R2 as asset CDN, Stripe for subscriptions and billing, and Claude AI to enrich the content workflow. A personal lab to explore full-stack architecture, real SaaS and web 3D.',
+      es: 'Plataforma SaaS donde artistas exponen sus obras en galerías 3D navegables en el navegador. Construida con Next.js 15, React Three Fiber y un stack de servicios real: Neon, Inngest, Cloudflare R2, Stripe y Claude AI. Un proyecto personal para explorar full-stack moderno y 3D en web.',
+      en: 'SaaS platform where artists exhibit their work in 3D galleries navigable in the browser. Built with Next.js 15, React Three Fiber and a real services stack: Neon, Inngest, Cloudflare R2, Stripe and Claude AI. A personal project to explore modern full-stack and web 3D.',
     },
     technologies: ['Next.js 15', 'React Three Fiber', 'TypeScript', 'Neon', 'Inngest', 'Stripe', 'Claude AI'],
     thumbnail: '/assets/projects/artvista-thumb.png',
