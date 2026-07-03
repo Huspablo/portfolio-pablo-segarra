@@ -16,6 +16,25 @@
 
 export const projects = [
   {
+    id: 'artvista-3d',
+    title: 'Artvista 3D',
+    type: { es: 'Proyecto personal', en: 'Personal project' },
+    role: { es: 'Full-Stack Developer', en: 'Full-Stack Developer' },
+    company: null,
+    year: '2025',
+    description: {
+      es: 'Plataforma SaaS para galerías de arte virtuales en 3D. Los artistas suben sus obras y las exponen en espacios tridimensionales navegables en el navegador, renderizados en tiempo real con Three.js y React Three Fiber. Construida con Next.js 15 y TypeScript, integra un stack de servicios moderno: Neon (PostgreSQL) con Prisma para los datos, Inngest para procesar imágenes de forma asíncrona, Cloudflare R2 como CDN de assets, Stripe para suscripciones y billing, y Claude AI para enriquecer el flujo de contenido. Un laboratorio personal para explorar arquitectura full-stack, SaaS real y 3D en web.',
+      en: 'SaaS platform for immersive 3D art galleries. Artists upload their work and exhibit it in three-dimensional spaces that visitors navigate directly in the browser, rendered in real time with Three.js and React Three Fiber. Built with Next.js 15 and TypeScript, it integrates a modern services stack: Neon (PostgreSQL) with Prisma for data, Inngest for async image processing, Cloudflare R2 as asset CDN, Stripe for subscriptions and billing, and Claude AI to enrich the content workflow. A personal lab to explore full-stack architecture, real SaaS and web 3D.',
+    },
+    technologies: ['Next.js 15', 'React Three Fiber', 'TypeScript', 'Neon', 'Inngest', 'Stripe', 'Claude AI'],
+    thumbnail: '/assets/projects/artvista-thumb.png',
+    links: {
+      live: 'https://arvista-3d.vercel.app/',
+    },
+    featured: true,
+    visible: true,
+  },
+  {
     id: 'prodevelop',
     title: 'Posidonia Terminal 4.0 — Design Implementation',
     type: { es: 'Diseño UX/UI', en: 'UX/UI Design' },
@@ -131,7 +150,7 @@ export const projects = [
     thumbnail: '/assets/projects/particles.png',
     links: {},
     featured: false,
-    visible: true,
+    visible: false,
   },
 ]
 
