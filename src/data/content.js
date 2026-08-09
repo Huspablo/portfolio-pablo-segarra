@@ -163,10 +163,21 @@ export const TECH_GROUPS = [
 
 export const EXPERIENCE = [
   {
+    role: { es: 'Front End Engineer', en: 'Front End Engineer' },
+    company: 'FERMAX',
+    logo: '/assets/logos/fermax.svg',
+    date: { es: 'Julio 2026 — Actualidad', en: 'July 2026 — Present' },
+    desc: {
+      es: 'Front End Engineer en el área de I+D, dentro del equipo de Software de FERMAX. Especializado en el desarrollo y evolución de aplicaciones web con Vue 3, contribuyendo a la arquitectura de componentes, la integración con servicios y la mejora continua del producto.',
+      en: 'Front End Engineer in FERMAX’s R&D Software team. Focused on developing and evolving Vue 3 web applications, contributing to component architecture, service integrations and continuous product improvement.',
+    },
+    stack: ['Vue 3', 'Frontend Architecture', 'Service Integration', 'R&D'],
+  },
+  {
     role: { es: 'Frontend Engineer', en: 'Frontend Engineer' },
     company: 'Prodevelop',
     logo: '/assets/logos/prodevelop.png',
-    date: { es: 'Jun 2024 — Actualidad', en: 'Jun 2024 — Present' },
+    date: { es: 'Jun 2024 — Jun 2026', en: 'Jun 2024 — Jun 2026' },
     desc: {
       es: 'En el departamento Terminal Solutions construimos productos de gestión portuaria desde cero. Me encargo del front con Vue 3: desde cómo organizamos los componentes hasta definir cómo escribe código el equipo. También toco el back con Java y Spring Boot, y uso GitHub Copilot a diario para ir más rápido sin bajar la calidad.',
       en: 'In the Terminal Solutions department we build port management products from scratch. I own the front-end with Vue 3: from how we organise components to defining how the team writes code. I also touch the back-end with Java and Spring Boot, and use GitHub Copilot daily to move faster without dropping quality.',
