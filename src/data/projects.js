@@ -27,7 +27,7 @@ export const projects = [
       en: 'SaaS platform where artists exhibit their work in 3D galleries navigable in the browser. Built with Next.js 15, React Three Fiber and a real services stack: Neon, Inngest, Cloudflare R2, Stripe and Claude AI. A personal project to explore modern full-stack and web 3D.',
     },
     technologies: ['Next.js 15', 'React Three Fiber', 'TypeScript', 'Neon', 'Inngest', 'Stripe', 'Claude AI'],
-    thumbnail: '/assets/projects/artvista-thumb.png',
+    thumbnail: '/assets/projects/artvista-thumb.webp',
     links: {
       live: 'https://arvista-3d.vercel.app/',
     },
@@ -46,11 +46,18 @@ export const projects = [
       en: 'Together with a designer colleague, we built the interface system for Prodevelop\'s apps. I bridged the gap between the design team and the developers: taking the Figma designs and translating them into Vue components, making sure what got implemented matched what had been designed.',
     },
     technologies: ['Figma', 'UX/UI', 'Design Systems', 'Prototyping'],
-    thumbnail: '/assets/projects/pt4.0.png',
+    thumbnail: '/assets/projects/pt4.0.webp',
     // Dos vídeos — para cambiar: edita src o title
     videos: [
       { src: '/assets/projects/prodevelop-overview.mp4',   title: 'Overview' },
       { src: '/assets/projects/prodevelop-reefer.mp4',     title: 'Reefer + Yard Inventory' },
+    ],
+    // Capturas de pantalla del sistema de diseño — para añadir más, añade la ruta aquí
+    gallery: [
+      '/assets/projects/prodevelop-dialog.webp',
+      '/assets/projects/prodevelop-login.webp',
+      '/assets/projects/prodevelop-table-light.webp',
+      '/assets/projects/prodevelop-table-dark.webp',
     ],
     links: {
       figma: 'https://www.figma.com/design/k4syBB9QmwPMwDybPPj9bS/T.-Terminal-4.0?node-id=70-2089&p=f&t=gik2nKglCPHy3nHY-0',
@@ -70,7 +77,7 @@ export const projects = [
       en: 'Interactive Vue.js documentation and learning platform. Created a space for the Prodevelop team to learn and improve their Vue skills, covering from basic concepts to advanced patterns. Includes interactive examples, best practices guides and practical exercises.',
     },
     technologies: ['Vue 3', 'Vite', 'Documentation', 'Interactive Learning', 'Markdown'],
-    thumbnail: '/assets/projects/vue-lab.png',
+    thumbnail: '/assets/projects/vue-lab.webp',
     links: {
       live: 'https://vue-learning-lab.vercel.app/#/',
     },
@@ -89,7 +96,7 @@ export const projects = [
       en: 'Internal tool developed at Preference to visualise the state and logs of deployment pipelines running on Kubernetes. It allowed real-time tracking of deployments for large web projects, with an interface built in Vue 3 and Vuetify.',
     },
     technologies: ['Vue 3', 'Vuetify', 'Kubernetes', 'Figma'],
-    thumbnail: '/assets/projects/kbe-thumb.png',
+    thumbnail: '/assets/projects/kbe-thumb.webp',
     // Vídeo de 71 MB — para producción comprímelo o súbelo a YouTube/Vimeo
     // y cambia esta ruta por el embed correspondiente
     video: '/assets/projects/kbe.mp4',
@@ -111,7 +118,7 @@ export const projects = [
       en: "Real-time monitoring dashboard for Preference's cloud manager. Tracks ~100 PrefWeb instances deployed across European clients, with availability charts and incident alerts. Also my first self-driven Vue project — a great way to get comfortable with the stack.",
     },
     technologies: ['Vue 3', 'Vite', 'Chart.js', 'Vue Router', 'Sass'],
-    thumbnail: '/assets/projects/dashboard-bg.jpg',
+    thumbnail: '/assets/projects/dashboard-bg.webp',
     links: {
       live: 'https://prefweb-dashboard.vercel.app/#/dashboard',
     },
@@ -130,7 +137,7 @@ export const projects = [
       en: 'University project — an online salad shop. I built the full stack: backend with Java and Tomcat following MVC, MySQL database and the frontend by hand with HTML, CSS and JavaScript.',
     },
     technologies: ['Java', 'Tomcat', 'MySQL', 'PHP', 'HTML', 'CSS'],
-    thumbnail: '/assets/projects/saladelia-home.jpg',
+    thumbnail: '/assets/projects/saladelia-home.webp',
     links: {},
     featured: false,
     visible: true,
@@ -147,7 +154,7 @@ export const projects = [
       en: 'Particle simulation with real physics: collisions between particles and against planes. To keep it fast with many particles I used a spatial HashTable to avoid checking unnecessary collisions.',
     },
     technologies: ['Processing', 'Java', 'Physics', 'Algorithms'],
-    thumbnail: '/assets/projects/particles.png',
+    thumbnail: '/assets/projects/particles.webp',
     links: {},
     featured: false,
     visible: false,

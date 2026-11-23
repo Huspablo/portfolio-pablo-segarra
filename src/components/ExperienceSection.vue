@@ -1,14 +1,15 @@
 <template>
   <section class="section-pad wrap" id="experience" data-screen-label="Experience">
     <span class="eyebrow reveal">{{ t('exp.eyebrow') }}</span>
-    <h2 class="section-title reveal reveal-d1">{{ t('exp.title') }}</h2>
-    <p class="section-lead reveal reveal-d2">{{ t('exp.lead') }}</p>
+    <h2 class="section-title reveal">{{ t('exp.title') }}</h2>
+    <p class="section-lead reveal">{{ t('exp.lead') }}</p>
 
     <div class="timeline">
       <div
-        v-for="job in EXPERIENCE"
+        v-for="(job, i) in EXPERIENCE"
         :key="job.company + job.date.en"
-        class="tl-item reveal"
+        class="tl-item reveal reveal-stagger"
+        :style="{ '--stagger': i }"
       >
         <div class="tl-dot"></div>
         <div class="tl-card">

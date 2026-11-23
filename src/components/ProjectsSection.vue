@@ -3,16 +3,17 @@
 
     <!-- Header -->
     <span class="eyebrow reveal">{{ t('proj.eyebrow') }}</span>
-    <h2 class="section-title reveal reveal-d1">{{ t('proj.title') }}</h2>
-    <p class="section-lead reveal reveal-d2">{{ t('proj.lead') }}</p>
+    <h2 class="section-title reveal">{{ t('proj.title') }}</h2>
+    <p class="section-lead reveal">{{ t('proj.lead') }}</p>
 
     <!-- Project grid -->
     <div class="work-grid">
       <ProjectCard
-        v-for="p in visible"
+        v-for="(p, i) in visible"
         :key="p.id"
         :project="p"
-        class="reveal"
+        class="reveal reveal-stagger"
+        :style="{ '--stagger': i }"
       />
     </div>
 
@@ -21,7 +22,7 @@
       <div class="skills-head" style="margin-top: var(--section-y);">
         <div>
           <span class="eyebrow reveal">{{ lang === 'es' ? 'Publicaciones' : 'Publications' }}</span>
-          <h2 class="section-title reveal reveal-d1" style="font-size: clamp(1.6rem, 3vw, 2.4rem);">
+          <h2 class="section-title reveal" style="font-size: clamp(1.6rem, 3vw, 2.4rem);">
             {{ lang === 'es' ? 'Artículos y publicaciones.' : 'Articles & publications.' }}
           </h2>
         </div>
@@ -29,9 +30,10 @@
 
       <div class="pubs-grid">
         <a
-          v-for="pub in visiblePubs"
+          v-for="(pub, i) in visiblePubs"
           :key="pub.id"
-          class="pub-card reveal"
+          class="pub-card reveal reveal-stagger"
+          :style="{ '--stagger': i }"
           :href="pub.link"
           target="_blank"
           rel="noopener"

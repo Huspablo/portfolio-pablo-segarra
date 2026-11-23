@@ -1,11 +1,7 @@
 <template>
-  <!-- Decorative background -->
-  <div class="bg-field" aria-hidden="true">
-    <div class="blob blob-1"></div>
-    <div class="blob blob-2"></div>
-    <div class="blob blob-3"></div>
-  </div>
-  <div class="grain" aria-hidden="true"></div>
+  <!-- Ambient background: dot grid + cursor spotlight -->
+  <div class="bg-grid" aria-hidden="true"></div>
+  <div class="bg-spotlight" :class="{ 'is-active': spotlightActive }" aria-hidden="true"></div>
 
   <NavBar />
 
@@ -23,7 +19,7 @@
 </template>
 
 <script setup>
-import { onMounted, watch } from 'vue'
+import { ref, onMounted, onUnmounted, watch } from 'vue'
 import NavBar from './components/NavBar.vue'
 import HeroSection from './components/HeroSection.vue'
 import AboutSection from './components/AboutSection.vue'
@@ -39,43 +35,22 @@ import { useReveal } from './composables/useReveal.js'
 
 const { lang } = useI18n()
 const { theme, applyTheme } = useTheme()
-const { observeAll, revealAllSoon } = useReveal()
+const { observeAll } = useReveal()
 
-function initCursor() {
-  if (window.matchMedia('(hover: none)').matches) return
+const spotlightActive = ref(false)
+let rafId = null
+let pendingX = 0
+let pendingY = 0
 
-  const dot = document.createElement('div')
-  dot.className = 'cursor-dot'
-  const ring = document.createElement('div')
-  ring.className = 'cursor-ring'
-  document.body.append(dot, ring)
-  document.body.classList.add('cursor-on')
-
-  let rx = 0, ry = 0, x = 0, y = 0
-
-  document.addEventListener('mousemove', (e) => {
-    x = e.clientX
-    y = e.clientY
-    dot.style.transform = `translate(${x}px, ${y}px) translate(-50%, -50%)`
-  })
-
-  ;(function loop() {
-    rx += (x - rx) * 0.18
-    ry += (y - ry) * 0.18
-    ring.style.transform = `translate(${rx}px, ${ry}px) translate(-50%, -50%)`
-    requestAnimationFrame(loop)
-  })()
-
-  window.__ringHover = (on) => ring.classList.toggle('is-hover', on)
-}
-
-function bindCursorTargets() {
-  if (!window.__ringHover) return
-  document.querySelectorAll('a, button, [data-cursor="hover"]').forEach((n) => {
-    if (n.__bound) return
-    n.__bound = true
-    n.addEventListener('mouseenter', () => window.__ringHover(true))
-    n.addEventListener('mouseleave', () => window.__ringHover(false))
+function onPointerMove(e) {
+  pendingX = e.clientX
+  pendingY = e.clientY
+  if (rafId) return
+  rafId = requestAnimationFrame(() => {
+    document.documentElement.style.setProperty('--mx', `${pendingX}px`)
+    document.documentElement.style.setProperty('--my', `${pendingY}px`)
+    spotlightActive.value = true
+    rafId = null
   })
 }
 
@@ -86,13 +61,22 @@ onMounted(() => {
   // Arm scroll reveal
   document.documentElement.classList.add('reveal-on')
 
-  initCursor()
-  observeAll().then(() => bindCursorTargets())
-  revealAllSoon()
+  observeAll()
+
+  const canHover = window.matchMedia('(hover: hover)').matches
+  const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches
+  if (canHover && !reduceMotion) {
+    window.addEventListener('pointermove', onPointerMove, { passive: true })
+  }
+})
+
+onUnmounted(() => {
+  window.removeEventListener('pointermove', onPointerMove)
+  if (rafId) cancelAnimationFrame(rafId)
 })
 
 // Re-observe after language change (new DOM elements rendered)
 watch(lang, () => {
-  observeAll().then(() => bindCursorTargets())
+  observeAll()
 })
 </script>

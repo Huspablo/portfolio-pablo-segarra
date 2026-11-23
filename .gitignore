@@ -28,5 +28,5 @@ pnpm-debug.log*
 # Original source folder (not needed in the deployed repo)
 Portfolio psegarra/
 
-# Claude Code session data
-.claude/
+# Claude Code local-only settings (contains tokens) — skills/ and agents/ ARE tracked
+.claude/settings.local.json

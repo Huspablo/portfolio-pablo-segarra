@@ -32,12 +32,5 @@ export function useReveal() {
     })
   }
 
-  // Safety net: reveal any still-hidden elements after a delay
-  function revealAllSoon() {
-    const flush = () => document.querySelectorAll('.reveal:not(.in)').forEach((n) => n.classList.add('in'))
-    window.addEventListener('load', () => setTimeout(flush, 1200))
-    setTimeout(flush, 3000)
-  }
-
-  return { observeAll, revealAllSoon }
+  return { observeAll }
 }

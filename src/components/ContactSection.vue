@@ -3,19 +3,20 @@
     <div class="contact-grid">
       <div>
         <span class="eyebrow reveal">{{ t('contact.eyebrow') }}</span>
-        <h2 class="section-title reveal reveal-d1">{{ t('contact.title') }}</h2>
-        <p class="section-lead reveal reveal-d2">{{ t('contact.lead') }}</p>
-        <div class="contact-place reveal reveal-d2">
+        <h2 class="section-title reveal">{{ t('contact.title') }}</h2>
+        <p class="section-lead reveal">{{ t('contact.lead') }}</p>
+        <div class="contact-place reveal">
           <span class="place-ic" v-html="icons.phone" aria-hidden="true"></span>
           <span>{{ t('contact.locationVal') }}</span>
         </div>
       </div>
 
-      <div class="contact-links reveal reveal-d1">
+      <div class="contact-links">
         <a
-          v-for="item in CONTACT"
+          v-for="(item, i) in CONTACT"
           :key="item.href"
-          class="contact-row"
+          class="contact-row reveal reveal-stagger"
+          :style="{ '--stagger': i }"
           :href="item.href"
           v-bind="item.type === 'social' ? { target: '_blank', rel: 'noopener' } : {}"
         >

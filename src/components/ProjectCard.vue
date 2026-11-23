@@ -2,7 +2,11 @@
   <article :class="['pcard', { 'pcard--featured': featured }]">
 
     <!-- MEDIA -->
-    <div class="pcard-media" @click="openMedia">
+    <div
+      class="pcard-media"
+      :style="{ viewTransitionName: modalOpen ? 'none' : 'vt-project-' + project.id }"
+      @click="openPrimary"
+    >
       <!-- Thumbnail image -->
       <img
         v-if="project.thumbnail"
@@ -69,7 +73,7 @@
         <button
           v-if="project.gallery?.length"
           class="btn btn-ghost pcard-btn"
-          @click="openMedia"
+          @click="openGallery"
         >
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="16" height="16"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/></svg>
           {{ lang === 'es' ? 'Ver diseños' : 'View designs' }}
@@ -77,7 +81,7 @@
         <button
           v-if="project.video || project.videos?.length"
           class="btn btn-ghost pcard-btn"
-          @click="openMedia"
+          @click="openVideo"
         >
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="16" height="16"><polygon points="5 3 19 12 5 21 5 3"/></svg>
           {{ project.videos?.length > 1 ? (lang === 'es' ? `Ver ${project.videos.length} vídeos` : `Watch ${project.videos.length} videos`) : (lang === 'es' ? 'Ver demo' : 'Watch demo') }}
@@ -104,11 +108,14 @@
 
     <!-- Modal -->
     <ProjectModal
-      v-model="modalOpen"
+      :model-value="modalOpen"
+      @update:model-value="setModalOpen"
+      :id="project.id"
       :gallery="project.gallery"
       :video="project.video"
       :videos="project.videos"
       :title="project.title"
+      :initial-view="modalView"
     />
   </article>
 </template>
@@ -125,6 +132,7 @@ const props = defineProps({
 
 const { lang } = useI18n()
 const modalOpen = ref(false)
+const modalView = ref(null)
 
 function t(field) {
   if (!field) return ''
@@ -152,7 +160,27 @@ const typeBadgeClass = computed(() => {
   return 'pcard-badge--academic'
 })
 
-function openMedia() {
-  if (hasMedia.value) modalOpen.value = true
+function setModalOpen(val) {
+  if (document.startViewTransition) {
+    document.startViewTransition(() => { modalOpen.value = val })
+  } else {
+    modalOpen.value = val
+  }
+}
+
+function openPrimary() {
+  if (!hasMedia.value) return
+  modalView.value = (props.project.video || props.project.videos?.length) ? 'video' : 'gallery'
+  setModalOpen(true)
+}
+
+function openGallery() {
+  modalView.value = 'gallery'
+  setModalOpen(true)
+}
+
+function openVideo() {
+  modalView.value = 'video'
+  setModalOpen(true)
 }
 </script>

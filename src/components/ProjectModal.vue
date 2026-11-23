@@ -2,15 +2,25 @@
   <Teleport to="body">
     <Transition name="modal">
       <div v-if="modelValue" class="pmodal-overlay" @click.self="close" role="dialog" aria-modal="true">
-        <div class="pmodal-box">
+        <div class="pmodal-box" :style="id ? { viewTransitionName: 'vt-project-' + id } : {}">
           <button class="pmodal-close icon-btn" @click="close" aria-label="Cerrar">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
               <path d="M6 6l12 12M18 6L6 18"/>
             </svg>
           </button>
 
+          <!-- Tabs when more than one media type is available -->
+          <div class="pmodal-mtabs" v-if="hasVideo && hasGallery">
+            <button :class="['pmodal-mtab', { active: view === 'video' }]" @click="view = 'video'">
+              {{ videoTabLabel }}
+            </button>
+            <button :class="['pmodal-mtab', { active: view === 'gallery' }]" @click="view = 'gallery'">
+              {{ galleryTabLabel }}
+            </button>
+          </div>
+
           <!-- Multiple videos mode -->
-          <template v-if="videos && videos.length">
+          <template v-if="view === 'video' && videos && videos.length">
             <video
               v-if="!videoFailed"
               class="pmodal-video"
@@ -27,7 +37,7 @@
               </svg>
               <p>Vídeo no disponible</p>
             </div>
-            <!-- Video tabs -->
+            <!-- Video sub-tabs -->
             <div class="pmodal-vtabs" v-if="videos.length > 1">
               <button
                 v-for="(v, i) in videos"
@@ -42,7 +52,7 @@
           </template>
 
           <!-- Single video mode -->
-          <template v-else-if="video">
+          <template v-else-if="view === 'video' && video">
             <video
               v-if="!videoFailed"
               class="pmodal-video"
@@ -62,7 +72,7 @@
           </template>
 
           <!-- Gallery mode -->
-          <template v-else-if="gallery && gallery.length">
+          <template v-else-if="view === 'gallery' && gallery && gallery.length">
             <div class="pmodal-gallery">
               <img
                 class="pmodal-img"
@@ -96,20 +106,31 @@
 </template>
 
 <script setup>
-import { ref, watch, onMounted, onUnmounted } from 'vue'
+import { ref, computed, watch, onMounted, onUnmounted } from 'vue'
+import { useI18n } from '../composables/useI18n.js'
 
 const props = defineProps({
   modelValue: Boolean,
+  id: String,
   gallery: Array,
   video: String,
   videos: Array,
   title: String,
+  initialView: String,
 })
 const emit = defineEmits(['update:modelValue'])
+
+const { lang } = useI18n()
 
 const current = ref(0)
 const currentVideo = ref(0)
 const videoFailed = ref(false)
+const view = ref('video')
+
+const hasVideo = computed(() => !!(props.video || props.videos?.length))
+const hasGallery = computed(() => !!props.gallery?.length)
+const videoTabLabel = computed(() => lang.value === 'es' ? 'Vídeo' : 'Video')
+const galleryTabLabel = computed(() => lang.value === 'es' ? 'Capturas' : 'Screenshots')
 
 function close() {
   emit('update:modelValue', false)
@@ -134,6 +155,7 @@ watch(() => props.modelValue, (val) => {
     current.value = 0
     currentVideo.value = 0
     videoFailed.value = false
+    view.value = props.initialView || (hasVideo.value ? 'video' : 'gallery')
   }
 })
 

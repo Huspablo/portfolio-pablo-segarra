@@ -1,13 +1,8 @@
 import { createApp } from 'vue'
-import { createVuetify } from 'vuetify'
-import 'vuetify/styles'
+import '@fontsource-variable/archivo'
+import '@fontsource/ibm-plex-mono/400.css'
+import '@fontsource/ibm-plex-mono/500.css'
 import App from './App.vue'
 import './styles/main.css'
 
-const vuetify = createVuetify({
-  theme: {
-    defaultTheme: 'light',
-  },
-})
-
-createApp(App).use(vuetify).mount('#app')
+createApp(App).mount('#app')
